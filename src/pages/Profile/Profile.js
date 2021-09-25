@@ -23,6 +23,10 @@ const Profile = () => {
   const [stories, setStories] = useState([]);
   const [userData, setUserData] = useState(null);
 
+  const [storyTitle, setStoryTitle] = useState(null);
+  const [story, setStory] = useState(null);
+  const [replies, setReplies] = useState(null);
+
   useEffect(() => {
     getStoriesId();
   }, []);
@@ -52,6 +56,7 @@ const Profile = () => {
       .then((doc) => {
         if (doc.exists) {
           const tempObj = { ...doc.data(), id };
+          console.log('tempObj', tempObj);
           setStories((prev) => {
             return [...prev, tempObj];
           });
@@ -72,6 +77,15 @@ const Profile = () => {
       .catch((error) => {
         console.log(error.message);
       });
+  };
+
+  const formattedTime = (timestamp) =>
+    timestamp.toDate().toDateString().substring(4);
+
+  const handleClick = (id) => {
+    setStoryTitle(stories[id].title);
+    setStory(stories[id].story);
+    setReplies(stories[id].replies);
   };
 
   // const renderStories = () => {
@@ -141,83 +155,45 @@ const Profile = () => {
           </div>
 
           <h2 className='profile__label'>Joined at</h2>
-          <h3>
-            {userData && userData.joined.toDate().toDateString().substring(4)}
-          </h3>
+          <h3>{userData && formattedTime(userData.joined)}</h3>
         </div>
-
-        {/* <div className='profile__edit'>Edit your profile</div> */}
       </section>
       <section className='profile__middle'>
         <div className='profile-middle__header'>
           <h2>Stories</h2>
         </div>
         <section className='profile__story--list'>
-          <div className='profile__story--list--card'>
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <h3>May 3, 2021</h3>
-            <div className='profile__social profile__profile__story--links'>
-              <div className='profile__social--link profile__story--link'>
-                <MessageCircle strokeWidth={1} className='icons icon--small' />8
-              </div>
-              <div className='profile__social--link profile__story--link'>
-                <Heart strokeWidth={1} className='icons icon--small' />
-                32
-              </div>
-            </div>
-          </div>
-          <div className='profile__story--list--card'>
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <h3>May 3, 2021</h3>
-            <div className='profile__social profile__profile__story--links'>
-              <div className='profile__social--link profile__story--link'>
-                <MessageCircle strokeWidth={1} className='icons icon--small' />8
-              </div>
-              <div className='profile__social--link profile__story--link'>
-                <Heart strokeWidth={1} className='icons icon--small' />
-                32
+          {stories.map((data, index) => (
+            <div
+              className='profile__story--list--card'
+              key={data.id}
+              id={index}
+              onClick={() => handleClick(index)}
+            >
+              <h2>{data.title}</h2>
+              <h3>{formattedTime(data.timestamp)}</h3>
+              <div className='profile__social profile__profile__story--links'>
+                <div className='profile__social--link profile__story--link'>
+                  <MessageCircle
+                    strokeWidth={1}
+                    className='icons icon--small'
+                  />
+                  {data.replies.length}
+                </div>
+                <div className='profile__social--link profile__story--link'>
+                  <Heart strokeWidth={1} className='icons icon--small' />
+                  {data.like}
+                </div>
               </div>
             </div>
-          </div>
-          <div className='profile__story--list--card'>
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <h3>May 3, 2021</h3>
-            <div className='profile__social profile__profile__story--links'>
-              <div className='profile__social--link profile__story--link'>
-                <MessageCircle strokeWidth={1} className='icons icon--small' />8
-              </div>
-              <div className='profile__social--link profile__story--link'>
-                <Heart strokeWidth={1} className='icons icon--small' />
-                32
-              </div>
-            </div>
-          </div>
+          ))}
         </section>
       </section>
       <section className='profile__right'>
         <section className='profile__story'>
           <div className='profile__story--container' id='container_story'>
-            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. A
-              assumenda, quisquam harum eum fuga voluptas laboriosam ipsa
-              voluptatem cumque optio vel, ea sed impedit facere molestias cum.
-              Rem, labore itaque? Ratione unde beatae nulla cum neque facere
-              quidem obcaecati earum veritatis, doloribus qui in culpa ab
-              voluptates vitae sequi voluptatibus accusantium tempore aliquam
-              assumenda. Similique ex ipsam, suscipit fugiat necessitatibus
-              harum possimus. Cumque velit a explicabo veniam unde repellendus,
-              totam dolorum facere asperiores, tempora, fugit perspiciatis
-              voluptatibus quibusdam iusto accusamus magnam nostrum laudantium
-              libero eum suscipit! Debitis magni, impedit omnis inventore
-              eveniet in quae ipsam ad consequuntur eaque quidem minima eius
-              atque nulla deserunt totam tempora. Eligendi laudantium quos
-              explicabo. Minus voluptatum quidem qui eos excepturi, a dolores
-              inventore laudantium vitae impedit nemo est atque, obcaecati
-              commodi placeat repudiandae. Odio voluptates quo libero nostrum?
-              Perferendis dolorem rerum, harum ullam odit quia vel alias, quos
-              ipsum cumque culpa cum, architecto nesciunt.
-            </p>
+            <h2>{storyTitle && storyTitle}</h2>
+            <p>{story && story}</p>
           </div>
           <div className='profile__button--container'>
             <button className='read'>Read</button>
@@ -228,6 +204,17 @@ const Profile = () => {
         <section className='profile__replies'>
           <div className='profile-right__header'>Replies</div>
           <section className='profile__replies--list'>
+            {replies &&
+              replies.map((data) => (
+                <div className='profile__replies--list--card'>
+                  <div>
+                    <h2>{data.name}</h2>
+                    <h3>{formattedTime(data.timestamp)}</h3>
+                  </div>
+                  <p>{data.comment}</p>
+                </div>
+              ))}
+            {/* 
             <div className='profile__replies--list--card'>
               <div>
                 <h2>Jane Doe</h2>
@@ -264,18 +251,7 @@ const Profile = () => {
                 ducimus assumenda quaerat voluptates.
               </p>
             </div>
-            <div className='profile__replies--list--card'>
-              <div>
-                <h2>Joseph Haryanto</h2>
-                <h3>May 3, 2021</h3>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                sit veritatis quae est itaque corporis quos labore dolorum.
-                Optio dolore perspiciatis inventore suscipit vel natus nihil
-                ducimus assumenda quaerat voluptates.
-              </p>
-            </div>
+           */}
           </section>
         </section>
       </section>

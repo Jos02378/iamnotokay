@@ -438,6 +438,12 @@
   height: 100%;
   overflow-y: scroll;
   border-top: 1px solid #333;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.profile__replies::-webkit-scrollbar {
+  display: none;
 }
 
 .profile-right__header {

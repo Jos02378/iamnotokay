@@ -5,13 +5,13 @@
 *******************/
 
 .profile__email {
-    @include responsive-font(sm);
-    margin-bottom: 2.5rem;
+  @include responsive-font(sm);
+  margin-bottom: 2.5rem;
 }
 
 .profile__label {
-    @include responsive-font(bigsm);
-    margin-bottom: 10px;
+  @include responsive-font(bigsm);
+  margin-bottom: 10px;
 }
 
 /******************* 
@@ -19,170 +19,175 @@
 *******************/
 
 .profile__wrapper {
-    width: 100vw;
-    height: $height-page;
-    // overflow: hidden;
+  width: 100vw;
+  height: $height-page;
+  // overflow: hidden;
 
-    display: grid;
-    grid-template-columns: 0.3fr 0.26fr 0.44fr;
-    color: $white;
+  display: grid;
+  grid-template-columns: 0.3fr 0.26fr 0.44fr;
+  color: $white;
 
-    h1 {
-        margin-bottom: 5px;
-        @include responsive-font(lg);
-    }
+  h1 {
+    margin-bottom: 5px;
+    @include responsive-font(lg);
+  }
 
-    h2,
-    p {
-        @include responsive-font(sm);
-        font-weight: map-get($fontweight, light);
-        line-height: 25px;
-    }
+  h2,
+  p {
+    @include responsive-font(sm);
+    font-weight: map-get($fontweight, light);
+    line-height: 25px;
+  }
 
-    h3 {
-        @include responsive-font(md);
-    }
+  h3 {
+    @include responsive-font(md);
+  }
 }
 
 .profile__left {
-    border-width: 1px 0 0 0;
-    position: relative;
+  border-width: 1px 0 0 0;
+  position: relative;
 }
 
 .profile-left__container {
-    padding: 1.5rem 3rem;
+  padding: 1.5rem 3rem;
 }
 
 .profile__social {
-    display: flex;
-    flex-direction: column;
-    margin: 2rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0 1rem;
 }
 
 .profile__edit {
-    width: 100%;
-    padding: 2rem;
-    position: absolute;
-    bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  position: absolute;
+  bottom: 0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid #333;
-    @include responsive-font(md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #333;
+  @include responsive-font(md);
 
-    &:hover {
-        background: $white;
-        color: $black;
-    }
+  &:hover {
+    background: $white;
+    color: $black;
+  }
 }
 
 .profile-middle__header {
-    @include responsive-padding-standard(x, 10px, 10px, 20px);
+  @include responsive-padding-standard(x, 10px, 10px, 20px);
 
-    min-height: 70px;
-    display: flex;
-    align-items: center;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
 
-    h2 {
-        font-weight: 700;
-        @include responsive-font(lg);
-    }
+  h2 {
+    font-weight: 700;
+    @include responsive-font(lg);
+  }
 }
 
 .profile__middle {
-    border-right: 1px solid #333;
-    border-left: 1px solid #333;
+  border-right: 1px solid #333;
+  border-left: 1px solid #333;
 }
 
 .profile__story--list {
-    border: 0;
+  border: 0;
 }
 
 // Right Section
 .profile__right {
-    display: flex;
-    flex-direction: column;
-    max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
 }
 
 .profile__story,
 .profile__replies {
-    flex: 1;
+  flex: 1;
 }
 
 .profile__story {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .profile__story--container {
-    @include responsive-padding-standard(x);
-    @include responsive-padding-standard(y);
-    overflow: hidden;
+  @include responsive-padding-standard(x);
+  @include responsive-padding-standard(y);
+  overflow: hidden;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    h2 {
-        margin-bottom: 1rem;
-        @include responsive-font(md);
-        font-weight: map-get($fontweight, semibold);
-    }
+  h2 {
+    margin-bottom: 1rem;
+    @include responsive-font(md);
+    font-weight: map-get($fontweight, semibold);
+  }
 
-    p {
-        @include responsive-font(sm);
-        font-weight: map-get($fontweight, light);
-        overflow-y: hidden;
-        max-height: 190px;
-    }
+  p {
+    @include responsive-font(sm);
+    font-weight: map-get($fontweight, light);
+    overflow-y: hidden;
+    max-height: 190px;
+  }
 }
 
 #container_story {
-    padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 .profile__button--container {
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    border-top: 1px solid #333;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #333;
 
-    button {
-        flex: 1;
-        border: 0;
-        background: $black;
+  button {
+    flex: 1;
+    border: 0;
+    background: $black;
 
-        font-weight: map-get($fontweight, light);
-        color: $white;
+    font-weight: map-get($fontweight, light);
+    color: $white;
 
-        cursor: pointer;
-        @include responsive-font(md);
+    cursor: pointer;
+    @include responsive-font(md);
 
-        &:hover {
-            color: $black;
-            background: $white;
-        }
+    &:hover {
+      color: $black;
+      background: $white;
     }
+  }
 
-    button:nth-child(2) {
-        border-right: 1px solid #333;
-        border-left: 1px solid #333;
-    }
+  button:nth-child(2) {
+    border-right: 1px solid #333;
+    border-left: 1px solid #333;
+  }
 }
 
 .profile__replies {
-    // height: 180px;
-    height: 100%;
-    overflow-y: scroll;
-    border-top: 1px solid #333;
+  height: 100%;
+  overflow-y: scroll;
+  border-top: 1px solid #333;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.profile__replies::-webkit-scrollbar {
+  display: none;
 }
 
 .profile-right__header {
-    padding: 2rem;
-    border-bottom: 1px solid #333;
-    @include responsive-font(lg);
+  padding: 2rem;
+  border-bottom: 1px solid #333;
+  @include responsive-font(lg);
 }
 
 /******************* 
@@ -192,105 +197,105 @@
 // SOCIAL LINKS
 
 .profile__social--link {
-    width: 160px;
-    padding: 0.7rem;
-    background: $white;
-    color: $black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    margin-bottom: 10px;
-    @include responsive-font(sm);
+  width: 160px;
+  padding: 0.7rem;
+  background: $white;
+  color: $black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  @include responsive-font(sm);
 
-    transition: background 200ms, color 200ms;
+  transition: background 200ms, color 200ms;
 
-    &:hover {
-        background: $black;
-        color: $white;
-    }
+  &:hover {
+    background: $black;
+    color: $white;
+  }
 }
 
 .icons {
-    width: 20px;
-    height: 20px;
-    fill: $black;
-    margin-right: 0.8rem;
+  width: 20px;
+  height: 20px;
+  fill: $black;
+  margin-right: 0.8rem;
 }
 
 .icon--white {
-    fill: $white;
+  fill: $white;
 }
 
 .icon--small {
-    width: 15px;
-    height: 15px;
-    margin-right: 0.5rem;
+  width: 15px;
+  height: 15px;
+  margin-right: 0.5rem;
 }
 
 // STORY CARD
 
 .profile__story--list--card {
-    @include responsive-padding-standard(x, 10px, 10px, 20px);
-    @include responsive-padding-standard(y, 10px, 10px, 20px);
-    border: 1px solid #333;
-    border-width: 1px 0 1px 0;
+  @include responsive-padding-standard(x, 10px, 10px, 20px);
+  @include responsive-padding-standard(y, 10px, 10px, 20px);
+  border: 1px solid #333;
+  border-width: 1px 0 1px 0;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    h2 {
-        @include responsive-font(md);
-        font-weight: map-get($fontweight, semibold);
-    }
+  h2 {
+    @include responsive-font(md);
+    font-weight: map-get($fontweight, semibold);
+  }
 
-    h3 {
-        font-weight: map-get($fontweight, light);
-        @include responsive-font(sm);
-        margin-top: 10px;
-    }
+  h3 {
+    font-weight: map-get($fontweight, light);
+    @include responsive-font(sm);
+    margin-top: 10px;
+  }
 }
 
 .profile__story--list--card:not(:first-child) {
-    border-top: 0;
+  border-top: 0;
 }
 
 // STORY LINKS
 .profile__profile__story--links {
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-bottom: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 0;
 }
 
 .profile__story--link {
-    width: 60px;
-    margin-bottom: 0;
-    margin-right: 10px;
-    @include responsive-font(extrasm);
+  width: 60px;
+  margin-bottom: 0;
+  margin-right: 10px;
+  @include responsive-font(extrasm);
 }
 
 // REPLY LIST CARD
 .profile__replies--list--card {
-    padding: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #333;
+
+  div {
     display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #333;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
 
-    div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
+  h2 {
+    @include responsive-font(md);
+  }
 
-    h2 {
-        @include responsive-font(md);
-    }
+  h3 {
+    @include responsive-font(sm);
+  }
 
-    h3 {
-        @include responsive-font(sm);
-    }
-
-    p {
-        text-align: justify;
-    }
+  p {
+    text-align: justify;
+  }
 }
