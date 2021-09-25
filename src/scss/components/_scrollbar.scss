@@ -1,0 +1,23 @@
+@import '../abstracts/colors';
+
+@mixin scrollbar() {
+    &::-webkit-scrollbar {
+        background: transparent;
+        width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        width: 20px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: map-get($gray, 600);
+        border-radius: 100px;
+        cursor: default;
+
+        transition: background 500ms;
+
+        &:hover {
+            // background: map-get($gray, 100);
+            background: $white;
+        }
+    }
+}

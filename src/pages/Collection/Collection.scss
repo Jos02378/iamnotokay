@@ -1,0 +1,150 @@
+@import '../../scss/styles.scss';
+
+.collection__wrapper {
+    width: 100vw;
+    height: $height-page;
+    color: $white;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.collection__container {
+    @include responsive-padding-standard(x);
+    @include responsive-padding-standard(y, 40px, 40px, 40px);
+
+    width: 100%;
+    max-height: $height-page;
+    flex-grow: 1;
+
+    position: relative;
+    overflow-y: hidden;
+}
+
+.collection__container--upper {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.collection__title {
+    @include responsive-font(lg);
+}
+
+.collection__icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .collection__icons--item {
+        margin-left: 15px;
+        cursor: pointer;
+        position: relative;
+
+        // &::after {
+        //     content: '';
+        //     background: $white;
+        //     width: 80px;
+        //     height: 20px;
+
+        //     position: relative;
+        //     left: 0;
+        //     bottom: 0;
+        // }
+
+        * {
+            fill: transparent;
+            transition: fill 150ms;
+        }
+
+        &:hover * {
+            fill: $white;
+        }
+    }
+
+    .icon__message {
+        &::before {
+            @include button-popup('reply to this story', 40px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 300ms;
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
+    }
+
+    .icon__share {
+        &::before {
+            @include button-popup('copy to clipboard', 40px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 300ms;
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
+    }
+
+    .icon__flag {
+        &::before {
+            @include button-popup('report', 40px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 300ms;
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
+    }
+}
+
+.collection__info {
+    @include responsive-font(sm);
+
+    margin-top: 20px;
+    display: flex;
+
+    .collection__owner {
+        font-weight: map-get($fontweight, semibold);
+        cursor: pointer;
+    }
+
+    .collection__date {
+        font-weight: map-get($fontweight, extralight);
+        margin-left: 5px;
+    }
+}
+
+.collection__desc {
+    @include responsive-font(sm);
+
+    margin-top: 30px;
+
+    font-weight: map-get($fontweight, extralight);
+    line-height: 40px;
+}
+
+.collection__buttons {
+    @include bottom-panel-container;
+
+    button {
+        @include bottom-panel-button;
+        @include responsive-padding-standard(x);
+    }
+
+    .collection__previous,
+    .collection__next {
+        width: 20%;
+    }
+
+    .collection__open {
+        flex-grow: 1;
+    }
+}
