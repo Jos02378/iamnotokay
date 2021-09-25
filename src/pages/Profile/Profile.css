@@ -189,7 +189,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-top: 1px solid #333;
+  border-top: 1px solid #333333;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -269,8 +269,31 @@
 }
 
 .profile__middle {
-  border-right: 1px solid #333;
-  border-left: 1px solid #333;
+  border-right: 1px solid #333333;
+  border-left: 1px solid #333333;
+  min-height: 100vh;
+  overflow-y: scroll;
+}
+
+.profile__middle::-webkit-scrollbar {
+  background: transparent;
+  width: 10px;
+}
+
+.profile__middle::-webkit-scrollbar-track {
+  width: 20px;
+}
+
+.profile__middle::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 100px;
+  cursor: default;
+  -webkit-transition: background 500ms;
+  transition: background 500ms;
+}
+
+.profile__middle::-webkit-scrollbar-thumb:hover {
+  background: white;
 }
 
 .profile__story--list {
@@ -285,14 +308,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-height: 100vh;
-}
-
-.profile__story,
-.profile__replies {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .profile__story {
@@ -306,10 +326,13 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
+  height: 50vh;
 }
 
 .profile__story--container {
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,6 +340,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  max-width: 100%;
+  height: 50vh;
+  z-index: 0;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -328,15 +354,15 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .profile__story--container {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
 @media (min-width: 1024px) {
   .profile__story--container {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
@@ -349,16 +375,37 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .profile__story--container {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
 @media (min-width: 1024px) {
   .profile__story--container {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
+}
+
+.profile__story--container::-webkit-scrollbar {
+  background: transparent;
+  width: 10px;
+}
+
+.profile__story--container::-webkit-scrollbar-track {
+  width: 20px;
+}
+
+.profile__story--container::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 100px;
+  cursor: default;
+  -webkit-transition: background 500ms;
+  transition: background 500ms;
+}
+
+.profile__story--container::-webkit-scrollbar-thumb:hover {
+  background: white;
 }
 
 .profile__story--container h2 {
@@ -386,8 +433,6 @@
 
 .profile__story--container p {
   font-weight: 300;
-  overflow-y: hidden;
-  max-height: 190px;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -413,7 +458,7 @@
 }
 
 .profile__button--container {
-  height: 60px;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -421,7 +466,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  border-top: 1px solid #333;
+  border-top: 1px solid #333333;
+  -webkit-box-shadow: 0px -20px 60px rgba(0, 0, 0, 0.7);
+          box-shadow: 0px -20px 60px rgba(0, 0, 0, 0.7);
+  z-index: 25;
 }
 
 .profile__button--container button {
@@ -459,14 +507,14 @@
 }
 
 .profile__button--container button:nth-child(2) {
-  border-right: 1px solid #333;
-  border-left: 1px solid #333;
+  border-right: 1px solid #333333;
+  border-left: 1px solid #333333;
 }
 
 .profile__replies {
   height: 100%;
   overflow-y: scroll;
-  border-top: 1px solid #333;
+  border-top: 1px solid #333333;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -476,7 +524,7 @@
 }
 
 .profile-right__header {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #333333;
   min-height: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -489,22 +537,22 @@
 
 @media (min-width: 320px) and (max-width: 767px) {
   .profile-right__header {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .profile-right__header {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
 @media (min-width: 1024px) {
   .profile-right__header {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
@@ -625,7 +673,7 @@
 }
 
 .profile__story--list--card {
-  border: 1px solid #333;
+  border: 1px solid #333333;
   border-width: 1px 0 1px 0;
   cursor: pointer;
 }
@@ -833,7 +881,6 @@
 }
 
 .profile__replies--list--card {
-  padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -841,7 +888,49 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #333333;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .profile__replies--list--card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile__replies--list--card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile__replies--list--card {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .profile__replies--list--card {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile__replies--list--card {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile__replies--list--card {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
 .profile__replies--list--card div {
