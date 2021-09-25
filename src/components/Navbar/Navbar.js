@@ -30,12 +30,6 @@ function Navbar() {
             return true;
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        return null;
-    };
-
     const goToProfile = () => {
         if (!user) {
             history.push({
@@ -67,6 +61,7 @@ function Navbar() {
                 onClick={goToProfile}
                 strokeWidth={1}
                 color="#FFF"
+                style={{ fill: location?.pathname === ROUTE.PROFILE && '#FFF' }}
             />
         </div>
     );
