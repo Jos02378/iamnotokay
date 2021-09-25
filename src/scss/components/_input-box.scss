@@ -1,0 +1,20 @@
+@use 'sass:meta';
+@import '../abstracts/_abstracts-dir';
+@import '../vendors/_vendors-dir';
+
+@mixin input-box-translucent($minheight, $maxheight, $fontsize) {
+    border-radius: 5px;
+    background: transparent;
+    width: 100%;
+    min-height: $minheight;
+    max-height: $maxheight;
+    @include responsive-padding-standard(x);
+
+    color: $white;
+    @include responsive-font($fontsize);
+
+    &:hover,
+    &:focus {
+        background: #ffffff15;
+    }
+}

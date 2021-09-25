@@ -1,0 +1,133 @@
+@use 'sass:meta';
+.homepage__wrapper {
+  width: 100vw;
+  height: calc(100vh - 90px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.homepage__hero {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .homepage__hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .homepage__hero {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homepage__hero {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.homepage__hero--title {
+  color: white;
+  font-family: "Reenie Beanie", cursive;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .homepage__hero--title {
+    font-size: 55px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .homepage__hero--title {
+    font-size: 65px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homepage__hero--title {
+    font-size: 75px;
+  }
+}
+
+.homepage__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100%;
+  min-height: 90px;
+  -webkit-box-shadow: 0px -20px 90px 20px black;
+          box-shadow: 0px -20px 90px 20px black;
+  z-index: 100;
+}
+
+.homepage__buttons button {
+  background: transparent;
+  border: 1px solid #333333;
+  border-top-width: 2px;
+  border-bottom-width: 0;
+  cursor: pointer;
+  font-weight: 300;
+  color: white;
+  -webkit-transition: color 100ms, background 100ms;
+  transition: color 100ms, background 100ms;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .homepage__buttons button {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .homepage__buttons button {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homepage__buttons button {
+    font-size: 22px;
+  }
+}
+
+.homepage__buttons button:focus {
+  outline: 0;
+}
+
+.homepage__buttons button:hover {
+  background: white;
+  color: black;
+}
+/*# sourceMappingURL=Homepage.css.map */

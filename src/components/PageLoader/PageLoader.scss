@@ -1,0 +1,16 @@
+@import '../../scss/styles.scss';
+
+.loader__wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #50505030;
+    backdrop-filter: blur(6px);
+
+    display: grid;
+    place-items: center;
+
+    z-index: 100;
+}

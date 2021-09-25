@@ -1,0 +1,69 @@
+@import '../../scss/styles.scss';
+
+.write__wrapper {
+    width: 100vw;
+    height: $height-page;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.write__container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1;
+    @include responsive-padding-standard(x);
+    @include responsive-padding-standard(y, 20px, 30px, 30px);
+
+    & > * {
+        border: 0;
+        background: transparent;
+
+        &:focus {
+            outline: 0;
+        }
+
+        &::placeholder {
+            color: $white;
+            font-weight: 300;
+        }
+    }
+
+    input {
+        @include input-box-translucent(70px, 90px, lg);
+        
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    textarea {
+        @include input-box-translucent(70px, 1000px, sm);
+        @include responsive-padding-standard(y, 20px, 30px, 30px);
+        @include scrollbar;
+
+        resize: none;
+        flex: 1;
+        font-weight: map-get($fontweight, extralight);
+        line-height: 28px;
+    }
+}
+
+.write__buttons {
+    @include bottom-panel-container;
+
+    button {
+        @include bottom-panel-button;
+        @include responsive-padding-standard(x);
+    }
+
+    .write__anonymous.active {
+        background: $white;
+        color: $black;
+    }
+
+    .write__submit {
+        flex-grow: 1;
+    }
+}

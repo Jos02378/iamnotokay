@@ -1,0 +1,11 @@
+@import '../../scss/styles.scss';
+
+.shader {
+    width: 100%;
+    background: linear-gradient(to bottom, transparent, $black);
+
+    bottom: 0;
+    left: 0;
+
+    z-index: map-get($zindexes, high);
+}

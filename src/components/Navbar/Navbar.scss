@@ -1,0 +1,44 @@
+@import '../../scss/styles.scss';
+
+.navbar__container {
+    @include responsive-padding-standard(x);
+    width: 100vw;
+    height: $height-navbar;
+    border-bottom: 1px solid map-get($gray, 600);
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: $black;
+    box-shadow: 0px 10px 40px $black;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: map-get($zindexes, highest);
+}
+
+.navbar__logo {
+    @include responsive-font(lg);
+    color: $white;
+    font-family: $font-handwriting;
+}
+
+.navbar__profile {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: $white;
+
+    stroke: $white;
+    fill: transparent;
+
+    transition: fill 200ms;
+
+    &:hover,
+    &:focus {
+        fill: $white;
+    }
+}
