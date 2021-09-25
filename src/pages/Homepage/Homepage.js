@@ -37,7 +37,7 @@ const Homepage = () => {
         <div className="homepage__wrapper">
             <div className="homepage__hero">
                 <h1 className="homepage__hero--title">
-                    Your pain is temporary
+                    I am not okay
                 </h1>
             </div>
             <div className="homepage__buttons">

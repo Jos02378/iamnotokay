@@ -11,12 +11,12 @@ import { Text, Modal, PageShader } from '../../components';
 const Story = () => {
     const toxicityModel = useContext(ToxicityModelContext);
     const { firebase, FieldValue } = useContext(FirebaseContext);
-    const history = useHistory();
     const location = useLocation();
     const { data: storyData, isInstantReplying } = location?.state || {};
 
     const [isReplying, setIsReplying] = useState(false);
     const [replyValue, setReplyValue] = useState('');
+    const [toxicityValue, setToxicityValue] = useState([]);
     const [isToxic, setIsToxic] = useState(false);
     const [alertVisible, setAlertVisible] = useState(false);
 
@@ -26,26 +26,40 @@ const Story = () => {
         }, 300);
     }, []);
 
+    // useEffect(() => {
+
+    // }, [toxicityValue])
+
     const triggerReply = () => {
         setIsReplying(!isReplying);
     };
 
-    const classifyToxicity = () => {
-        if (Object.keys(toxicityModel).length > 0) {
-            toxicityModel.classify(replyValue).then((predictions) => {
-                console.log('---------')
-                predictions.map((item, index) => {
-                    console.log(item.label, item.results[0].match);
-                    
-                });
-            });
-        } else {
-            return null;
-        }
-    };
-
     const submitReply = () => {
-        classifyToxicity();
+        if (Object.keys(toxicityModel).length > 0) {
+            toxicityModel
+                .classify(replyValue)
+                .then((predictions) => {
+                    predictions.forEach((item, index) => {
+                        const result = item?.results[0]?.match;
+
+                        if (result) {
+                            setAlertVisible(true);
+                            setIsToxic(true);
+                        }
+                    });
+                })
+                .then(() => {
+                    if (isToxic === true) return false;
+                    return true;
+                })
+                .then((res) => {
+                    if (res === true) {
+                        console.log('TOXICITY TEST PASSED');
+                    } else {
+                        console.log('TOXCITIY NOT PASSED');
+                    }
+                });
+        }
     };
 
     return (
@@ -80,7 +94,7 @@ const Story = () => {
                     data-gramm_editor={false}
                 />
                 <div className="story__reply--buttons">
-                    <div onClick={classifyToxicity}>Send my support</div>
+                    <div onClick={submitReply}>Send my support</div>
                     <div onClick={triggerReply}>X</div>
                 </div>
             </div>
@@ -115,7 +129,15 @@ const Story = () => {
             <Modal
                 title="We detect a presence of toxicity in your message"
                 description="Hate doesn't have a room in our society. Please revise your intention and come back better."
-                buttons={[{ text: "I'm sorry", onClick: () => setAlertVisible(false) }]}
+                buttons={[
+                    {
+                        text: "I'm sorry",
+                        onClick: () => {
+                            setAlertVisible(false);
+                            setIsToxic(false);
+                        },
+                    },
+                ]}
                 visible={alertVisible}
             />
             {/* <PageShader height="30%" /> */}
