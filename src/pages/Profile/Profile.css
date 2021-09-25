@@ -1,54 +1,4 @@
 @use 'sass:meta';
-/******************* 
-    TYPOGRAPHY 
-*******************/
-.profile__email {
-  margin-bottom: 2.5rem;
-}
-
-@media (min-width: 320px) and (max-width: 767px) {
-  .profile__email {
-    font-size: 11px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .profile__email {
-    font-size: 12px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .profile__email {
-    font-size: 14px;
-  }
-}
-
-.profile__label {
-  margin-bottom: 10px;
-}
-
-@media (min-width: 320px) and (max-width: 767px) {
-  .profile__label {
-    font-size: 13px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .profile__label {
-    font-size: 15px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .profile__label {
-    font-size: 18px;
-  }
-}
-
-/******************* 
-    LAYOUT 
-*******************/
 .profile__wrapper {
   width: 100vw;
   height: calc(100vh - 90px);
@@ -65,44 +15,63 @@
 
 @media (min-width: 320px) and (max-width: 767px) {
   .profile__wrapper h1 {
-    font-size: 22px;
+    font-size: 30px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .profile__wrapper h1 {
-    font-size: 26px;
+    font-size: 45px;
   }
 }
 
 @media (min-width: 1024px) {
   .profile__wrapper h1 {
-    font-size: 30px;
+    font-size: 55px;
   }
 }
 
-.profile__wrapper h2,
+.profile__wrapper h4 {
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .profile__wrapper h4 {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile__wrapper h4 {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile__wrapper h4 {
+    font-size: 14px;
+  }
+}
+
 .profile__wrapper p {
   font-weight: 300;
   line-height: 25px;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .profile__wrapper h2,
   .profile__wrapper p {
     font-size: 11px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .profile__wrapper h2,
   .profile__wrapper p {
     font-size: 12px;
   }
 }
 
 @media (min-width: 1024px) {
-  .profile__wrapper h2,
   .profile__wrapper p {
     font-size: 14px;
   }
@@ -128,11 +97,48 @@
 
 .profile__left {
   border-width: 1px 0 0 0;
-  position: relative;
 }
 
-.profile-left__container {
-  padding: 1.5rem 3rem;
+@media (min-width: 320px) and (max-width: 767px) {
+  .profile__left {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile__left {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile__left {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .profile__left {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile__left {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile__left {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
 .profile__social {
@@ -144,6 +150,29 @@
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 2rem 0 1rem;
+}
+
+.profile__social--label {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .profile__social--label {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile__social--label {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile__social--label {
+    font-size: 18px;
+  }
 }
 
 .profile__edit {
@@ -447,8 +476,36 @@
 }
 
 .profile-right__header {
-  padding: 2rem;
   border-bottom: 1px solid #333;
+  min-height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .profile-right__header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile-right__header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile-right__header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -474,22 +531,61 @@
 *******************/
 .profile__social--link {
   width: 160px;
-  padding: 0.7rem;
   background: white;
   color: black;
+  border: 1px solid transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   border-radius: 999px;
   margin-bottom: 10px;
-  -webkit-transition: background 200ms, color 200ms;
-  transition: background 200ms, color 200ms;
+  -webkit-transition: background 200ms, color 200ms, border 100ms;
+  transition: background 200ms, color 200ms, border 100ms;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .profile__social--link {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile__social--link {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile__social--link {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .profile__social--link {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile__social--link {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile__social--link {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -513,17 +609,13 @@
 .profile__social--link:hover {
   background: black;
   color: white;
+  border: 1px solid white;
 }
 
-.icons {
+.profile__icons {
   width: 20px;
   height: 20px;
-  fill: black;
   margin-right: 0.8rem;
-}
-
-.icon--white {
-  fill: white;
 }
 
 .icon--small {
@@ -629,7 +721,24 @@
   border-top: 0;
 }
 
-.profile__profile__story--links {
+.profile__story--active {
+  background: white;
+  color: black;
+}
+
+.profile__story--active .profile__story--cta {
+  background: black;
+  color: white;
+}
+
+.profile__story--active .profile__story--cta .profile__icons {
+  fill: white;
+}
+
+.profile__story--ctas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -640,28 +749,87 @@
   margin-bottom: 0;
 }
 
-.profile__story--link {
+.profile__story--cta {
   width: 60px;
-  margin-bottom: 0;
   margin-right: 10px;
+  width: 80px;
+  background: white;
+  color: black;
+  border: 1px solid transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  -webkit-transition: background 200ms, color 200ms, border 100ms;
+  transition: background 200ms, color 200ms, border 100ms;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .profile__story--link {
+  .profile__story--cta {
     font-size: 9px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .profile__story--link {
+  .profile__story--cta {
     font-size: 10px;
   }
 }
 
 @media (min-width: 1024px) {
-  .profile__story--link {
+  .profile__story--cta {
     font-size: 12px;
   }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .profile__story--cta {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile__story--cta {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile__story--cta {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .profile__story--cta {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile__story--cta {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile__story--cta {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.profile__story--cta .profile__icons {
+  fill: black;
 }
 
 .profile__replies--list--card {
