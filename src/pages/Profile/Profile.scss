@@ -1,188 +1,197 @@
 @import '../../scss/styles.scss';
 
 .profile__wrapper {
-    width: 100vw;
-    height: $height-page;
-    // overflow: hidden;
+  width: 100vw;
+  height: $height-page;
 
-    display: grid;
-    grid-template-columns: 0.3fr 0.26fr 0.44fr;
-    color: $white;
+  display: grid;
+  grid-template-columns: 0.3fr 0.26fr 0.44fr;
+  color: $white;
 
-    h1 {
-        margin-bottom: 5px;
-        @include responsive-font(extralg);
-    }
+  h1 {
+    margin-bottom: 5px;
+    @include responsive-font(extralg);
+  }
 
-    h4 {
-        @include responsive-font(sm);
-        font-weight: map-get($fontweight, light);
-        margin-bottom: 40px;
-    }
+  h4 {
+    @include responsive-font(sm);
+    font-weight: map-get($fontweight, light);
+    margin-bottom: 40px;
+  }
 
-    p {
-        @include responsive-font(sm);
-        font-weight: map-get($fontweight, light);
-        line-height: 25px;
-    }
+  p {
+    @include responsive-font(sm);
+    font-weight: map-get($fontweight, light);
+    line-height: 25px;
+  }
 
-    h3 {
-        @include responsive-font(md);
-    }
+  h3 {
+    @include responsive-font(md);
+  }
 }
 
 .profile__left {
-    @include responsive-padding-standard(x, 20px, 20px, 30px);
-    @include responsive-padding-standard(y, 20px, 20px, 30px);
-    border-width: 1px 0 0 0;
+  @include responsive-padding-standard(x, 20px, 20px, 30px);
+  @include responsive-padding-standard(y, 20px, 20px, 30px);
+  border-width: 1px 0 0 0;
 }
 
 .profile__social {
-    display: flex;
-    flex-direction: column;
-    margin: 2rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0 1rem;
 }
 
 .profile__social--label {
-    @include responsive-font(bigsm);
-    font-weight: map-get($fontweight, semibold);
-    margin-bottom: 10px;
+  @include responsive-font(bigsm);
+  font-weight: map-get($fontweight, semibold);
+  margin-bottom: 10px;
 }
 
 .profile__edit {
-    width: 100%;
-    padding: 2rem;
-    position: absolute;
-    bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  position: absolute;
+  bottom: 0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid #333;
-    @include responsive-font(md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid map-get($gray, 600);
+  @include responsive-font(md);
 
-    &:hover {
-        background: $white;
-        color: $black;
-    }
+  &:hover {
+    background: $white;
+    color: $black;
+  }
 }
 
 .profile-middle__header {
-    @include responsive-padding-standard(x, 10px, 10px, 20px);
+  @include responsive-padding-standard(x, 10px, 10px, 20px);
 
-    min-height: 70px;
-    display: flex;
-    align-items: center;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
 
-    h2 {
-        font-weight: 700;
-        @include responsive-font(lg);
-    }
+  h2 {
+    font-weight: 700;
+    @include responsive-font(lg);
+  }
 }
 
 .profile__middle {
-    border-right: 1px solid #333;
-    border-left: 1px solid #333;
+  border-right: 1px solid map-get($gray, 600);
+  border-left: 1px solid map-get($gray, 600);
+  min-height: 100vh;
+  @include scrollbar();
+  overflow-y: scroll;
 }
 
 .profile__story--list {
-    border: 0;
+  border: 0;
 }
 
 // Right Section
 .profile__right {
-    display: flex;
-    flex-direction: column;
-    max-height: 100vh;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 
-.profile__story,
-.profile__replies {
-    flex: 1;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .profile__story {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 50vh;
 }
 
 .profile__story--container {
-    @include responsive-padding-standard(x);
-    @include responsive-padding-standard(y);
-    overflow: hidden;
+  @include responsive-padding-standard(x, 20px, 20px, 30px);
+  @include responsive-padding-standard(y, 20px, 20px, 30px);
+  @include scrollbar();
+  overflow-y: scroll;
+  overflow-x: hidden;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: 50vh;
 
-    h2 {
-        margin-bottom: 1rem;
-        @include responsive-font(md);
-        font-weight: map-get($fontweight, semibold);
-    }
+  z-index: map-get($zindexes, normal);
 
-    p {
-        @include responsive-font(sm);
-        font-weight: map-get($fontweight, light);
-        overflow-y: hidden;
-        max-height: 190px;
-    }
+  h2 {
+    margin-bottom: 1rem;
+    @include responsive-font(md);
+    font-weight: map-get($fontweight, semibold);
+  }
+
+  p {
+    @include responsive-font(sm);
+    font-weight: map-get($fontweight, light);
+  }
 }
 
 #container_story {
-    padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 .profile__button--container {
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    border-top: 1px solid #333;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid map-get($gray, 600);
+  box-shadow: 0px -20px 60px rgba(0, 0, 0, 0.7);
 
-    button {
-        flex: 1;
-        border: 0;
-        background: $black;
+  z-index: map-get($zindexes, low);
 
-        font-weight: map-get($fontweight, light);
-        color: $white;
+  button {
+    flex: 1;
+    border: 0;
+    background: $black;
 
-        cursor: pointer;
-        @include responsive-font(md);
+    font-weight: map-get($fontweight, light);
+    color: $white;
 
-        &:hover {
-            color: $black;
-            background: $white;
-        }
+    cursor: pointer;
+    @include responsive-font(md);
+
+    &:hover {
+      color: $black;
+      background: $white;
     }
+  }
 
-    button:nth-child(2) {
-        border-right: 1px solid #333;
-        border-left: 1px solid #333;
-    }
+  button:nth-child(2) {
+    border-right: 1px solid map-get($gray, 600);
+    border-left: 1px solid map-get($gray, 600);
+  }
 }
 
 .profile__replies {
-    height: 100%;
-    overflow-y: scroll;
-    border-top: 1px solid #333;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  height: 100%;
+  overflow-y: scroll;
+  border-top: 1px solid map-get($gray, 600);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .profile__replies::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .profile-right__header {
-    @include responsive-padding-standard(x, 10px, 10px, 20px);
-    border-bottom: 1px solid #333;
-    min-height: 70px;
-    display: flex;
-    align-items: center;
+  @include responsive-padding-standard(x, 20px, 20px, 30px);
+  border-bottom: 1px solid map-get($gray, 600);
+  min-height: 70px;
+  display: flex;
+  align-items: center;
 
-    @include responsive-font(lg);
-    font-weight: map-get($fontweight, semibold)
+  @include responsive-font(lg);
+  font-weight: map-get($fontweight, semibold);
 }
 
 /******************* 
@@ -192,138 +201,139 @@
 // SOCIAL LINKS
 
 .profile__social--link {
-    @include responsive-padding-standard(x, 20px, 20px, 20px);
-    @include responsive-padding-standard(y, 10px, 10px, 10px);
-    width: 160px;
-    background: $white;
-    color: $black;
-    border: 1px solid transparent;
+  @include responsive-padding-standard(x, 20px, 20px, 20px);
+  @include responsive-padding-standard(y, 10px, 10px, 10px);
+  width: 160px;
+  background: $white;
+  color: $black;
+  border: 1px solid transparent;
 
-    display: flex;
-    align-items: center;
-    // justify-content: center;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
 
-    border-radius: 999px;
-    margin-bottom: 10px;
-    @include responsive-font(sm);
+  border-radius: 999px;
+  margin-bottom: 10px;
+  @include responsive-font(sm);
 
-    transition: background 200ms, color 200ms, border 100ms;
+  transition: background 200ms, color 200ms, border 100ms;
 
-    &:hover {
-        background: $black;
-        color: $white;
-        border: 1px solid $white;
-    }
+  &:hover {
+    background: $black;
+    color: $white;
+    border: 1px solid $white;
+  }
 }
 
 .profile__icons {
-    width: 20px;
-    height: 20px;
-    margin-right: 0.8rem;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.8rem;
 }
 
 .icon--small {
-    width: 15px;
-    height: 15px;
-    margin-right: 0.5rem;
+  width: 15px;
+  height: 15px;
+  margin-right: 0.5rem;
 }
 
 // STORY CARD
 
 .profile__story--list--card {
-    @include responsive-padding-standard(x, 10px, 10px, 20px);
-    @include responsive-padding-standard(y, 10px, 10px, 20px);
-    border: 1px solid #333;
-    border-width: 1px 0 1px 0;
+  @include responsive-padding-standard(x, 10px, 10px, 20px);
+  @include responsive-padding-standard(y, 10px, 10px, 20px);
+  border: 1px solid map-get($gray, 600);
+  border-width: 1px 0 1px 0;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    h2 {
-        @include responsive-font(md);
-        font-weight: map-get($fontweight, semibold);
-    }
+  h2 {
+    @include responsive-font(md);
+    font-weight: map-get($fontweight, semibold);
+  }
 
-    h3 {
-        font-weight: map-get($fontweight, light);
-        @include responsive-font(sm);
-        margin-top: 10px;
-    }
+  h3 {
+    font-weight: map-get($fontweight, light);
+    @include responsive-font(sm);
+    margin-top: 10px;
+  }
 }
 
 .profile__story--list--card:not(:first-child) {
-    border-top: 0;
+  border-top: 0;
 }
 
 .profile__story--active {
-    background: $white;
-    color: $black;
+  background: $white;
+  color: $black;
 
-    .profile__story--cta {
-        background: $black;
-        color: $white;
+  .profile__story--cta {
+    background: $black;
+    color: $white;
 
-        .profile__icons {
-            fill: $white;
-        }
+    .profile__icons {
+      fill: $white;
     }
+  }
 }
 
 // STORY LINKS
 .profile__story--ctas {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 0;
 }
 
 .profile__story--cta {
-    width: 60px;
-    margin-right: 10px;
-    @include responsive-font(extrasm);
+  width: 60px;
+  margin-right: 10px;
+  @include responsive-font(extrasm);
 
-    @include responsive-padding-standard(x, 20px, 20px, 20px);
-    @include responsive-padding-standard(y, 10px, 10px, 10px);
-    width: 80px;
-    background: $white;
-    color: $black;
-    border: 1px solid transparent;
+  @include responsive-padding-standard(x, 20px, 20px, 20px);
+  @include responsive-padding-standard(y, 10px, 10px, 10px);
+  width: 80px;
+  background: $white;
+  color: $black;
+  border: 1px solid transparent;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    border-radius: 999px;
-    margin-bottom: 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
 
-    transition: background 200ms, color 200ms, border 100ms;
+  transition: background 200ms, color 200ms, border 100ms;
 
-    .profile__icons {
-        fill: $black;
-    }
+  .profile__icons {
+    fill: $black;
+  }
 }
 
 // REPLY LIST CARD
 .profile__replies--list--card {
-    padding: 2rem;
+  @include responsive-padding-standard(x, 20px, 20px, 30px);
+  @include responsive-padding-standard(y, 20px, 20px, 30px);
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid map-get($gray, 600);
+
+  div {
     display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #333;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
 
-    div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
+  h2 {
+    @include responsive-font(md);
+  }
 
-    h2 {
-        @include responsive-font(md);
-    }
+  h3 {
+    @include responsive-font(sm);
+  }
 
-    h3 {
-        @include responsive-font(sm);
-    }
-
-    p {
-        text-align: justify;
-    }
+  p {
+    text-align: justify;
+  }
 }
