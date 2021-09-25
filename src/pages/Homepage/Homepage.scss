@@ -1,0 +1,37 @@
+@import '../../scss/styles.scss';
+
+.homepage__wrapper {
+    width: 100vw;
+    height: $height-page;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.homepage__hero {
+    @include responsive-padding-standard(x);
+
+    width: 100%;
+    flex: 1;
+
+    display: grid;
+    place-items: center;
+}
+
+.homepage__hero--title {
+    @include responsive-font(hero);
+
+    color: $white;
+    font-family: $font-handwriting;
+}
+
+.homepage__buttons {
+    @include bottom-panel-container;
+
+    button {
+        @include bottom-panel-button;
+        flex-grow: 1;
+    }
+}

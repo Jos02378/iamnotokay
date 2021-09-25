@@ -1,0 +1,148 @@
+@use 'sass:meta';
+.modal__wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(9.5px);
+          backdrop-filter: blur(9.5px);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.modal__container {
+  width: clamp(300px, 40%, 500px);
+  max-height: 500px;
+  background: white;
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .modal__container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal__container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal__container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .modal__container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal__container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal__container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.modal__container h1,
+.modal__container p {
+  color: black;
+  text-align: center;
+}
+
+.modal__container h1 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .modal__container h1 {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal__container h1 {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal__container h1 {
+    font-size: 30px;
+  }
+}
+
+.modal__container p {
+  font-weight: 300;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .modal__container p {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal__container p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal__container p {
+    font-size: 14px;
+  }
+}
+
+.modal__container .modal__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.modal__container .modal__buttons button {
+  background: black;
+  min-width: 100px;
+  height: 40px;
+  border-radius: 100px;
+  border: 0;
+  color: white;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Modal.css.map */

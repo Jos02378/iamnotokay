@@ -1,0 +1,55 @@
+@import '../vendors/_vendors-dir';
+
+$height-navbar: 90px;
+$height-page: calc(100vh - 90px);
+$height-bottompanel: $height-navbar;
+
+$padding-standard: (
+    desktop: 40px,
+    tablet: 30px,
+    mobile: 20px,
+);
+
+@mixin responsive-padding-standard(
+    $axis,
+    $pd-mobile: map-get($padding-standard, mobile),
+    $pd-tablet: map-get($padding-standard, tablet),
+    $pd-desktop: map-get($padding-standard, desktop)
+) {
+    @if ($axis == x) {
+        @include media('>=phone', '<tablet') {
+            padding-left: $pd-mobile;
+            padding-right: $pd-mobile;
+        }
+        @include media('>=tablet', '<desktop') {
+            padding-left: $pd-tablet;
+            padding-right: $pd-tablet;
+        }
+        @include media('>=desktop') {
+            padding-left: $pd-desktop;
+            padding-right: $pd-desktop;
+        }
+    }
+    @if ($axis == y) {
+        @include media('>=phone', '<tablet') {
+            padding-top: $pd-mobile;
+            padding-bottom: $pd-mobile;
+        }
+        @include media('>=tablet', '<desktop') {
+            padding-top: $pd-tablet;
+            padding-bottom: $pd-tablet;
+        }
+        @include media('>=desktop') {
+            padding-top: $pd-desktop;
+            padding-bottom: $pd-desktop;
+        }
+    }
+}
+
+$zindexes: (
+    highest: 100,
+    high: 75,
+    medium: 50,
+    low: 25,
+    normal: 0,
+);

@@ -1,0 +1,346 @@
+@use 'sass:meta';
+.write__wrapper {
+  width: 100vw;
+  height: calc(100vh - 90px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.write__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .write__container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .write__container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .write__container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .write__container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .write__container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .write__container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.write__container > * {
+  border: 0;
+  background: transparent;
+}
+
+.write__container > *:focus {
+  outline: 0;
+}
+
+.write__container > *::-webkit-input-placeholder {
+  color: white;
+  font-weight: 300;
+}
+
+.write__container > *:-ms-input-placeholder {
+  color: white;
+  font-weight: 300;
+}
+
+.write__container > *::-ms-input-placeholder {
+  color: white;
+  font-weight: 300;
+}
+
+.write__container > *::placeholder {
+  color: white;
+  font-weight: 300;
+}
+
+.write__container input {
+  border-radius: 5px;
+  background: transparent;
+  width: 100%;
+  min-height: 70px;
+  max-height: 90px;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .write__container input {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .write__container input {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .write__container input {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .write__container input {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .write__container input {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .write__container input {
+    font-size: 30px;
+  }
+}
+
+.write__container input:hover, .write__container input:focus {
+  background: #ffffff15;
+}
+
+.write__container textarea {
+  border-radius: 5px;
+  background: transparent;
+  width: 100%;
+  min-height: 70px;
+  max-height: 1000px;
+  color: white;
+  resize: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-weight: 200;
+  line-height: 28px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .write__container textarea {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .write__container textarea {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .write__container textarea {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .write__container textarea {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .write__container textarea {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .write__container textarea {
+    font-size: 14px;
+  }
+}
+
+.write__container textarea:hover, .write__container textarea:focus {
+  background: #ffffff15;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .write__container textarea {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .write__container textarea {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .write__container textarea {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.write__container textarea::-webkit-scrollbar {
+  background: transparent;
+  width: 10px;
+}
+
+.write__container textarea::-webkit-scrollbar-track {
+  width: 20px;
+}
+
+.write__container textarea::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 100px;
+  cursor: default;
+  -webkit-transition: background 500ms;
+  transition: background 500ms;
+}
+
+.write__container textarea::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+.write__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100%;
+  min-height: 90px;
+  -webkit-box-shadow: 0px -20px 90px 20px black;
+          box-shadow: 0px -20px 90px 20px black;
+  z-index: 100;
+}
+
+.write__buttons button {
+  background: transparent;
+  border: 1px solid #333333;
+  border-top-width: 2px;
+  border-bottom-width: 0;
+  cursor: pointer;
+  font-weight: 300;
+  color: white;
+  -webkit-transition: color 100ms, background 100ms;
+  transition: color 100ms, background 100ms;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .write__buttons button {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .write__buttons button {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .write__buttons button {
+    font-size: 22px;
+  }
+}
+
+.write__buttons button:focus {
+  outline: 0;
+}
+
+.write__buttons button:hover {
+  background: white;
+  color: black;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .write__buttons button {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .write__buttons button {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .write__buttons button {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.write__buttons .write__anonymous.active {
+  background: white;
+  color: black;
+}
+
+.write__buttons .write__submit {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+/*# sourceMappingURL=Write.css.map */

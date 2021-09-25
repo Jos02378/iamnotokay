@@ -1,0 +1,33 @@
+@import '../abstracts/_abstracts-dir';
+
+@mixin pseudo-element($element) {
+    &:#{$element},
+    &::#{$element} {
+        @content;
+    }
+}
+
+@mixin button-popup($content, $distance) {
+    content: $content;
+    position: absolute;
+    left: 50%;
+    top: $distance;
+
+    min-width: 50px;
+    min-height: 30px;
+    padding: 0 20px 3px;
+    background: $white;
+    border-radius: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include responsive-font(sm);
+    color: $black;
+    font-weight: map-get($fontweight, medium);
+    text-align: center;
+    white-space: nowrap;
+
+    transform: translateX(-50%);
+}
