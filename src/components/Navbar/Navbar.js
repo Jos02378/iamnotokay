@@ -13,13 +13,13 @@ function Navbar() {
     const user = useContext(UserContext);
     const history = useHistory();
 
-    useEffect(() => {
-        if (checkLocation()) {
-            if (user) return;
+    // useEffect(() => {
+    //     if (checkLocation()) {
+    //         if (user) return;
 
-            history.push(ROUTE.HOMEPAGE);
-        }
-    }, [user, history, location]);
+    //         history.push(ROUTE.HOMEPAGE);
+    //     }
+    // }, [user, history, location]);
 
     const checkLocation = () => {
         if (
@@ -58,7 +58,7 @@ function Navbar() {
             )} */}
             <User
                 className="navbar__profile"
-                onClick={goToProfile}
+                onClick={() => history.push(ROUTE.PROFILE)}
                 strokeWidth={1}
                 color="#FFF"
                 style={{ fill: location?.pathname === ROUTE.PROFILE && '#FFF' }}
