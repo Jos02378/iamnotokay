@@ -44,14 +44,14 @@ const Homepage = () => {
                 <button
                     type="button"
                     className="homepage__button"
-                    onClick={goToWrite}
+                    onClick={() => history.push(ROUTE.WRITE)}
                 >
                     I want to tell my stories
                 </button>
                 <button
                     type="button"
                     className="homepage__button"
-                    onClick={goToCollection}
+                    onClick={() => history.push(ROUTE.COLLECTION)}
                 >
                     I want read people's stories
                 </button>
