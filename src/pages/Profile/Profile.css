@@ -313,6 +313,7 @@
           align-items: stretch;
   min-height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
 .profile__story {
@@ -433,6 +434,7 @@
 
 .profile__story--container p {
   font-weight: 300;
+  padding-bottom: 40px;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -458,7 +460,7 @@
 }
 
 .profile__button--container {
-  height: 100px;
+  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -467,8 +469,8 @@
       -ms-flex-direction: row;
           flex-direction: row;
   border-top: 1px solid #333333;
-  -webkit-box-shadow: 0px -20px 60px rgba(0, 0, 0, 0.7);
-          box-shadow: 0px -20px 60px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px -20px 100px 20px black;
+          box-shadow: 0px -20px 100px 20px black;
   z-index: 25;
 }
 
