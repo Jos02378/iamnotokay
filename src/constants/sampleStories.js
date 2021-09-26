@@ -22,7 +22,7 @@ export default [
             fullname: 'Joseph Henderson',
             email: 'hendersonnation@gmail.com',
         },
-        story: `Content: It is difficult for me to write this article, so please be kind with your words.
+        story: `It is difficult for me to write this article, so please be kind with your words.
             My brother Calvin was born a bit slow and had a slight deformity (he had more fingers in his left and had more toes on his right). When he was young, his legs needed a brace to learn to walk. He is mentally retarded,, and the other children would bully him becacuse of it.
             But when we were young, we didn’t know much about these things, and it’s just that when he was a child, it was a little weird to talk about. Additionally, He likes to eat powdered milk. For example, and he thinks it’s better than ice cream. (To be honest with you, it is actually good).
             He went to a NHL game once. Fell in love with hockey and he wanted to play hockey for a living.

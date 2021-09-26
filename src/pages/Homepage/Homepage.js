@@ -53,7 +53,7 @@ const Homepage = () => {
                     className="homepage__button"
                     onClick={() => history.push(ROUTE.COLLECTION)}
                 >
-                    I want read people's stories
+                    I want to read people's stories
                 </button>
             </div>
         </div>
