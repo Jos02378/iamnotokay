@@ -16,7 +16,7 @@ import FirebaseContext from '../../contexts/firebaseContext';
 import UserContext from '../../contexts/userContext';
 
 const Profile = () => {
-  const { firebase } = useContext(FirebaseContext);
+  const { firebase, FieldValue } = useContext(FirebaseContext);
   const history = useHistory();
   const db = firebase.firestore();
   const [stories, setStories] = useState([]);
@@ -94,6 +94,43 @@ const Profile = () => {
     setStoryTitle(stories[id].title);
     setStory(stories[id].story);
     setReplies(stories[id].replies);
+  };
+
+  const handleDelete = () => {
+    console.log('id to be delete', currentIndex);
+    console.log('data to be delete', stories[currentIndex]);
+    updatePostCreated(stories[currentIndex].id);
+    deleteDocument(stories[currentIndex].id);
+  };
+
+  const updatePostCreated = (documentId) => {
+    db.collection('account')
+      .doc('IPM5IT9pLdgYeAAQ6lR8eWQrrln2')
+      .update({
+        post_created: FieldValue.arrayRemove(documentId),
+      })
+      .then(() => {
+        setStories(
+          stories.filter((data) => data.id !== stories[currentIndex].id)
+        );
+        if (currentIndex < stories.length - 1) {
+          handleClick(currentIndex + 1);
+        } else {
+          handleClick(currentIndex - 1);
+        }
+      });
+  };
+
+  const deleteDocument = (documentId) => {
+    db.collection('stories')
+      .doc(documentId)
+      .delete()
+      .then(() => {
+        // console.log('Document successfully deleted!');
+      })
+      .catch((error) => {
+        console.error('Error removing document: ', error);
+      });
   };
 
   return (
@@ -182,7 +219,9 @@ const Profile = () => {
             <p>{stories && story}</p>
           </div>
           <div className='profile__button--container'>
-            <button className='delete'>Delete</button>
+            <button className='delete' onClick={handleDelete}>
+              Delete
+            </button>
             <button className='edit'>Edit</button>
           </div>
         </section>
