@@ -44,35 +44,23 @@ const Collection = () => {
                     <div className="collection__icons">
                         <div className="collection__icons--item icon__message">
                             <MessageSquare
-                                // className="collection__icons--item icon__message"
                                 onClick={() => expandStory(true)}
                                 color="#FFF"
                                 strokeWidth={1}
                             />
                         </div>
                         <div className="collection__icons--item icon__heart">
-                            <Heart
-                                // className="collection__icons--item icon__heart"
-                                onClick={() => console.log('THIS IS LIKE ICON')}
-                                color="#FFF"
-                                strokeWidth={1}
-                            />
+                            <Heart onClick={() => null} color="#FFF" strokeWidth={1} />
                         </div>
                         <div className="collection__icons--item icon__share">
                             <Share2
-                                // className="collection__icons--item icon__share"
                                 onClick={() => navigator.clipboard.writeText(window.location.href)}
                                 color="#FFF"
                                 strokeWidth={1}
                             />
                         </div>
                         <div className="collection__icons--item icon__flag">
-                            <Flag
-                                // className="collection__icons--item icon__flag"
-                                onClick={() => console.log('THIS IS FLAG ICON')}
-                                color="#FFF"
-                                strokeWidth={1}
-                            />
+                            <Flag onClick={() => null} color="#FFF" strokeWidth={1} />
                         </div>
                     </div>
                 </div>

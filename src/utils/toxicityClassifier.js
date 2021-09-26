@@ -2,7 +2,7 @@ import '@tensorflow/tfjs';
 
 const toxicity = require('@tensorflow-models/toxicity');
 
-const toxicityTreshold = 0.6;
+const toxicityTreshold = 0.7;
 // const toxicityCategories = ['toxicity', 'severe_toxicity', 'insult', 'threat'];
 
 export default () =>

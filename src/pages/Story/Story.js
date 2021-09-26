@@ -140,7 +140,6 @@ const Story = () => {
                 ]}
                 visible={alertVisible}
             />
-            {/* <PageShader height="30%" /> */}
         </div>
     );
 };

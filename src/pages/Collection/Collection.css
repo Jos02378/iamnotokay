@@ -128,6 +128,10 @@
   fill: white;
 }
 
+.collection__icons .collection__icons--item .icon__filled {
+  fill: white;
+}
+
 .collection__icons .icon__message::before {
   content: "reply to this story";
   position: absolute;
