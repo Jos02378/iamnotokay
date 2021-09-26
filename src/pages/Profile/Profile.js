@@ -97,8 +97,6 @@ const Profile = () => {
   };
 
   const handleDelete = () => {
-    console.log('id to be delete', currentIndex);
-    console.log('data to be delete', stories[currentIndex]);
     updatePostCreated(stories[currentIndex].id);
     deleteDocument(stories[currentIndex].id);
   };
@@ -131,6 +129,10 @@ const Profile = () => {
       .catch((error) => {
         console.error('Error removing document: ', error);
       });
+  };
+
+  const handleEdit = () => {
+    history.push(`/w/${stories[currentIndex].id}`);
   };
 
   return (
@@ -222,7 +224,9 @@ const Profile = () => {
             <button className='delete' onClick={handleDelete}>
               Delete
             </button>
-            <button className='edit'>Edit</button>
+            <button className='edit' onClick={handleEdit}>
+              Edit
+            </button>
           </div>
         </section>
         <section className='profile__replies'>
